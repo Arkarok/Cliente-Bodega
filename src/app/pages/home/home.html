@@ -1,0 +1,59 @@
+<div class="container mt-5">
+  <!-- Encabezado -->
+  <div class="row align-items-center mb-4">
+    <div class="col">
+      <h1 class="mb-0">
+        Administración de Productos
+      </h1>
+      <p class="text-muted">
+        Gestión de los productos registrados en el sistema
+      </p>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary" type="button" (click)="GoToCreateProducts()">
+        + Crear producto
+      </button>
+    </div>
+  </div>
+
+  <!-- Tabla de productos -->
+  <div class="card shadow-sm">
+     <div class="card-header">
+      <h5 class="mb-0">
+        Lista de productos
+      </h5>
+    </div>
+
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover table-striped mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Valor</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (producto of listaProductos; track producto.id) {
+              <tr>
+                <td>{{ producto.id }}</td>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.cantidad }}</td>
+                <td>{{ producto.valor}}</td>
+                <td>
+                  <button class="btn btn-sm btn-warning me-2" (click)="GoToEditProducts(producto)">Editar</button>
+                  <button class="btn btn-sm btn-danger" (click)="DeleteProduct(producto)">Eliminar</button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+

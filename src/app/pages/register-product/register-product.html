@@ -1,0 +1,35 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0">{{ editando ? 'Editar Producto' : 'Registrar Producto' }}</h3>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="RegistrarProducto()">
+            <!-- Nombre -->
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre del producto</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej: Lavadora LG" [(ngModel)]="newProducto.nombre">
+            </div>
+            <!-- Cantidad -->
+            <div class="mb-3">
+              <label for="cantidad" class="form-label">Cantidad</label>
+              <input type="number" class="form-control" id="cantidad" name="cantidad" placeholder="Ej: 5" min="0" [(ngModel)]="newProducto.cantidad">
+            </div>
+            <!-- Valor -->
+            <div class="mb-3">
+              <label for="valor" class="form-label">Valor</label>
+              <input type="number" class="form-control" id="valor" name="valor" placeholder="Ej: 2200000" min="0" [(ngModel)]="newProducto.valor">
+            </div>
+            <!-- Botones -->
+            <div class="d-flex justify-content-end gap-2 mt-4">
+              <button type="button" class="btn btn-secondary">Cancelar</button>
+              <button type="submit" class="btn btn-primary">{{ editando ? 'Guardar cambios' : 'Registrar producto' }}</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
