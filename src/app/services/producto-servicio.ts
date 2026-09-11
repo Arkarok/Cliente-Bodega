@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { environment } from '../../environments/environment.development';
 import { Producto } from '../Models/Producto';
 import { ProductoDto } from '../Models/Dtos/ProductoDto';
 import { UpdateProductoDto } from '../Models/Dtos/UpdateProductoDto';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
